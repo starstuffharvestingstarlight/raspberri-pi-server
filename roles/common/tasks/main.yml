@@ -1,0 +1,16 @@
+- name: Update apt keys
+  command: apt-key update
+
+- name: Update apt cache
+  apt: update_cache=yes
+
+- name: Upgrade apt cache
+  apt: upgrade=yes
+
+- name: Install additional packages
+  apt: package=$item state=present
+  with_items:
+    - vim
+
+- name: Add removable storage
+  mount: src=/dev/sda1 name=/mnt/storage fstype=ext4 opts="defaults,noatime" dump=0 passno=1 state=mounted

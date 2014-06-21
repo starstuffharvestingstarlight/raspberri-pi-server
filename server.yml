@@ -1,0 +1,14 @@
+---
+- name: My current rpi config
+  hosts: pis
+  user: pi
+  sudo: yes
+# sudo apt-get install owncloud gitweb vim mysql-server 
+# sudo apt-get install python-dev git-core python-virtualenv
+# git clone  https://github.com/mozilla-services/syncserver
+# roles:
+#   - mozilla-syncserver
+  roles:
+    - common
+    - owncloud
+    - gitweb

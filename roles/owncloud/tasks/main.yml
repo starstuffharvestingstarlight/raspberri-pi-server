@@ -1,0 +1,4 @@
+- name: Install owncloud
+  apt: package=$item state=present
+  with_items:
+    - owncloud
