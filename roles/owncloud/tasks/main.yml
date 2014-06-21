@@ -1,4 +1,10 @@
+- name: Install owncloud source key
+  apt_key: url=http://download.opensuse.org/repositories/isv:ownCloud:community/Debian_7.0/Release.key state=present
+
+- name: Install owncloud sources
+  apt_repository: repo='deb http://download.opensuse.org/repositories/isv:/ownCloud:/community/Debian_7.0/ /' state=present update_cache=yes
+
 - name: Install owncloud
-  apt: package=$item state=present
+  apt: package={{ item }} state=present
   with_items:
     - owncloud

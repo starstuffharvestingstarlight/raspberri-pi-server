@@ -1,4 +1,4 @@
 - name: Install gitweb
-  apt: package=$item state=present
+  apt: package={{ item }} state=present
   with_items:
     - gitweb
