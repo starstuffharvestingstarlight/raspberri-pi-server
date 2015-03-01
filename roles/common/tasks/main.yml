@@ -1,4 +1,4 @@
-- shell: apt-get update && apt-get upgrade
+- shell: apt-get update -y && apt-get upgrade -y
 
 - name: Install additional packages
   apt: package={{ item }} state=present
